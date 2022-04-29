@@ -66,6 +66,6 @@ Route::middleware([NativeAuth_IsLogin::class])->group(function () {
 
 
 //peserta
-Route::get('login_peserta', [AuthPesertaController::class, 'login']);
-Route::get('login_peserta_submit', [AuthPesertaController::class, 'login_submit']);
+Route::get('peserta/login', [AuthPesertaController::class, 'login']);
+Route::post('peserta/login_submit', [AuthPesertaController::class, 'login_submit']);
 Route::get('peserta/dash', [DashPesertaController::class, 'index']);

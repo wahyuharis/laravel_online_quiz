@@ -31,7 +31,7 @@ use Illuminate\Support\Env;
             <?= Session::get('status') ?>
           </div>
         <?php } ?>
-        <form action="<?= url('') ?>">
+        <form action="<?= url('peserta/login_submit') ?>" method="post">
           <div class="form-group">
             <label for="username">Username:</label>
             <input type="text" class="form-control" id="username" placeholder="Username" name="username">

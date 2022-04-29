@@ -57,7 +57,8 @@
             <!-- Dropdown -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    {{ ucwords( Session::get('username') ) }}
+                    {{ ucwords( Session::get('no_induk') ) }} -
+                    {{ ucwords( Session::get('nama_peserta') ) }}
                 </a>
                 <div class="dropdown-menu" style="left: -80px;">
                     <!-- <a class="dropdown-item" href="#">Link 1</a> -->

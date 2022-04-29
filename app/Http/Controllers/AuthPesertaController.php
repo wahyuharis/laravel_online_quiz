@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AuthPesertaController extends Controller
 {
@@ -18,7 +20,7 @@ class AuthPesertaController extends Controller
         $username = $request->input('username');
         $password = $request->input('password');
         $users = DB::table('peserta')
-            ->whereRaw('( no_induk = ? ) and password = ? ', [$username, md5($password)])
+            ->whereRaw('no_induk = ? and password = ? ', [$username, md5($password)])
             ->first();
 
         if ($users) {
@@ -33,11 +35,11 @@ class AuthPesertaController extends Controller
             // $request->session()->put('username',$username);
             // $request->session()->put('password',md5($username));
 
-            return redirect('admin/dash');
+            return redirect('peserta/dash');
         } else {
 
             $request->session()->flash('status', 'Gagal Login, Check Kembali username dan password!');
-            return  redirect('admin/login');
+            return  redirect('peserta/login');
         }
     }
 
