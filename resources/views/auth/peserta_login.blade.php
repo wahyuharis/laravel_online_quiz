@@ -33,8 +33,8 @@ use Illuminate\Support\Env;
         <?php } ?>
         <form action="<?= url('peserta/login_submit') ?>" method="post">
           <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" class="form-control" id="username" placeholder="Username" name="username">
+            <label for="username">No Induk:</label>
+            <input type="text" class="form-control" id="username" placeholder="No Induk" name="username">
           </div>
           <div class="form-group">
             <label for="pwd">Password:</label>

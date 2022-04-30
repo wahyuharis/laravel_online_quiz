@@ -2,12 +2,12 @@
 
 namespace App\Http\Middleware;
 
+
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; 
 
-
-class NativeAuth_IsLogin
+class NativeAuthPeserta_IsLogin
 {
     /**
      * Handle an incoming request.
@@ -18,17 +18,19 @@ class NativeAuth_IsLogin
      */
     public function handle(Request $request, Closure $next)
     {
-        $username = $request->session()->get('username');
+        $username = $request->session()->get('no_induk');
         $password = $request->session()->get('password');
-        $users = DB::table('administrator')
-            ->whereRaw('( username = ? or email = ? ) and password = ? ', [$username, $username, $password])
+
+
+        $peserta = DB::table('peserta')
+            ->whereRaw('no_induk= ? and password = ? ', [$username, $password])
             ->get();
 
         // dd($users);
 
-        if (count($users)< 1 ) {
+        if (count($peserta)< 1 ) {
             $request->session()->flash('status', 'Maaf Anda Belum Login!');
-            return  redirect('admin/login');
+            return  redirect('peserta/login');
         } 
 
         return $next($request);

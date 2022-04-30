@@ -9,6 +9,7 @@ use App\Http\Controllers\DashPesertaController;
 use App\Http\Controllers\KelompokKuisController;
 use App\Http\Controllers\KelompokPesertaController;
 use App\Http\Middleware\NativeAuth_IsLogin;
+use App\Http\Middleware\NativeAuthPeserta_IsLogin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -68,4 +69,11 @@ Route::middleware([NativeAuth_IsLogin::class])->group(function () {
 //peserta
 Route::get('peserta/login', [AuthPesertaController::class, 'login']);
 Route::post('peserta/login_submit', [AuthPesertaController::class, 'login_submit']);
-Route::get('peserta/dash', [DashPesertaController::class, 'index']);
+Route::get('peserta/logout', [AuthPesertaController::class, 'logout']);
+
+
+Route::middleware([NativeAuthPeserta_IsLogin::class])->group(function () {
+    
+    Route::get('peserta/dash', [DashPesertaController::class, 'index']);
+
+});

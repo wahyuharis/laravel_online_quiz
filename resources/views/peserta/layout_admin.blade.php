@@ -63,7 +63,7 @@
                 <div class="dropdown-menu" style="left: -80px;">
                     <!-- <a class="dropdown-item" href="#">Link 1</a> -->
                     <!-- <a class="dropdown-item" href="#">Link 2</a> -->
-                    <a class="dropdown-item" href="<?= url('admin/logout') ?>">Logout</a>
+                    <a class="dropdown-item" href="<?= url('peserta/logout') ?>">Logout</a>
                 </div>
             </li>
         </ul>
