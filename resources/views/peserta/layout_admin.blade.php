@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="<?= url('DataTables_1/DataTables-1.11.5/css/dataTables.bootstrap4.min.css') ?>">
     <link rel="stylesheet" href="<?= url('DataTables_1/Buttons-2.2.2/css/buttons.bootstrap4.min.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= url('daterangepicker-master/daterangepicker.css') ?>" />
+    <link rel="stylesheet" type="text/css" href="<?= url('custom.css') ?>" />
 
 
     <script src="<?= url('js-plugin/jquery-3.6.0.min.js') ?>"></script>

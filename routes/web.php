@@ -8,6 +8,7 @@ use App\Http\Controllers\DashAdminController;
 use App\Http\Controllers\DashPesertaController;
 use App\Http\Controllers\KelompokKuisController;
 use App\Http\Controllers\KelompokPesertaController;
+use App\Http\Controllers\UjianDibukaController;
 use App\Http\Middleware\NativeAuth_IsLogin;
 use App\Http\Middleware\NativeAuthPeserta_IsLogin;
 use Illuminate\Support\Facades\Auth;
@@ -73,7 +74,12 @@ Route::get('peserta/logout', [AuthPesertaController::class, 'logout']);
 
 
 Route::middleware([NativeAuthPeserta_IsLogin::class])->group(function () {
-    
+
     Route::get('peserta/dash', [DashPesertaController::class, 'index']);
+    Route::get('peserta/ujian_dibuka', [UjianDibukaController::class, 'index']);
+
+    Route::get('peserta/mulai_ujian', [UjianDibukaController::class, 'mulai_ujian']);
+    Route::get('peserta/ujian', [UjianDibukaController::class, 'ujian']);
+    Route::post('peserta/ujian_ans_submit', [UjianDibukaController::class, 'ujian_ans_submit']);
 
 });

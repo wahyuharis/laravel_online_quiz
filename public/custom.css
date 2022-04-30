@@ -1,0 +1,28 @@
+input[type="radio"]{
+    appearance: none;
+    border: 1px solid #d3d3d3;
+    width: 30px;
+    height: 30px;
+    content: none;
+    outline: none;
+    margin: 10px 5px -6px 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ }
+ 
+ input[type="radio"]:checked {
+   appearance: none;
+   outline: none;
+   padding: 0;
+   content: none;
+   border: 1px solid #d3d3d3;
+ }
+ 
+ input[type="radio"]:checked::before{
+   position: absolute;
+   margin:-5px 0px 0px -5px;
+   color: black !important;
+   content: "\00A0\2713\00A0" !important;
+   border: none;
+   font-weight: bolder;
+   font-size: 30px;
+ }
